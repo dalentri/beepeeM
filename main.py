@@ -41,7 +41,7 @@ class BPM_machine:
                 self.last_tap_time = self.current_tap_time
 
                 self.calculate_bpm(self.buffer)
-                print(f"Current BPM: {self.bpm}")
+                print(f"Current BPM: {self.bpm:.2f}")
 
         # Close the listener
         if key == keyboard.Key.esc:
