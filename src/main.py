@@ -21,8 +21,6 @@ class BPM_machine:
     # Key handling
     def on_press(self, key):
 
-        print("tap")
-
         # bpm tap button
         if key == keyboard.Key.space:
             # If its the first tap
