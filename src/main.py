@@ -22,7 +22,7 @@ class BPM_machine:
     def on_press(self, key):
 
         # bpm tap button
-        if key == keyboard.Key.space:
+        if hasattr(key, "char") and key.char == "a":
             # If its the first tap
             if self.last_tap_time is None and self.current_tap_time is None:
                 self.last_tap_time = perf_counter()
@@ -47,7 +47,7 @@ class BPM_machine:
 
     def run(self):
         # Init listener that watches for key presses
-        with keyboard.Listener(on_press=self.on_press) as listener:
+        with keyboard.Listener(on_press=self.on_press, suppress=True) as listener:
             listener.join()
 
 
